@@ -1,4 +1,4 @@
-\pdfoutput=1    % apparently this is needed at the beginning for arXiv to process it
+% \pdfoutput=1    % apparently this is needed at the beginning for arXiv to process it
 \documentclass[letterpaper, 10 pt, conference]{ieeeconf}
 
 \IEEEoverridecommandlockouts                              % This command is only needed if 
@@ -78,6 +78,26 @@
 \newcommand{\emx}{\end{bmatrix}}
 \newcommand{\D}{\bar{\mathcal{D}}}
 
+% Load and define stuff needed to add labels in the margins
+\usepackage{marginnote}
+% \makeatletter
+% \let\oldmarginnote\marginnote
+% \renewcommand*{\marginnote}[1]{%
+%   \begingroup%
+%   \ifodd\value{page}
+%      \if@firstcolumn\reversemarginpar\fi
+%   \else
+%      \if@firstcolumn\else\reversemarginpar\fi
+%   \fi
+%   \oldmarginnote{#1}%
+%   \endgroup%
+% }
+% \makeatother
+
+% Set macro for labeling edits
+\newcommand{\revcomment}[2]{\textcolor{red}{#2} \marginnote{\##1}} % Include reference commands
+% \renewcommand{\revcomment}[2]{#2}   % removes coloring of edited sections, i.e. makes doc look normal (comment this line out for highlighted edits)
+
 
 \title{\LARGE \bf
 Force Generation by Parallel Combinations of \\ Fiber-Reinforced Fluid-Driven Actuators
@@ -116,12 +136,12 @@ Force Generation by Parallel Combinations of \\ Fiber-Reinforced Fluid-Driven Ac
 \input{sections/experiment.tex}
 \input{sections/conclusion.tex}
 
-\addtolength{\textheight}{-12cm}   % This command serves to balance the column lengths
-                                  % on the last page of the document manually. It shortens
-                                  % the textheight of the last page by a suitable amount.
-                                  % This command does not take effect until the next page
-                                  % so it should come on the page before the last. Make
-                                  % sure that you do not shorten the textheight too much.
+% \addtolength{\textheight}{-12cm}   % This command serves to balance the column lengths
+%                                   % on the last page of the document manually. It shortens
+%                                   % the textheight of the last page by a suitable amount.
+%                                   % This command does not take effect until the next page
+%                                   % so it should come on the page before the last. Make
+%                                   % sure that you do not shorten the textheight too much.
 
 % \input{sections/acknowledgement.tex}
 

@@ -3,8 +3,8 @@
 %
 Our modeling approach for individual FREEs is based on the notion of a \emph{fluid Jacobian} $\bar{J}$, which maps the geometrical deformation of a soft actuator, or of a system of actuators, to a change in their volume. 
 Under certain assumptions, the transpose of this Jacobian linearly maps the internal fluid pressure to the spatial forces that the actuator generates. 
-One can  think of this fluid Jacobian as the soft and multi-dimensional equivalent of the cross section $A$ of a traditional pneumatic or hydraulic cylinder.
-This cross section similarly relates cylinder pressure to force, and piston movement to fluid displacement.
+One can  think of this fluid Jacobian as the soft and multi-dimensional equivalent of the cross section $A$ of a traditional pneumatic or hydraulic cylinder,
+since this cross section similarly relates cylinder pressure to force, and piston movement to fluid displacement.
 
 
 \subsection{Force Generation in a Single FREE}
@@ -74,7 +74,7 @@ This neglects the tapering of the actuator towards the end-caps and any potentia
     \label{fig:FREEparams}
 \end{figure}
 
-An ideal cylindrical FREE in its relaxed configuration (i.e. when gauge fluid pressure is zero and no external loads are applied) can be described by a set of three parameters, $L$, $R$, and $\Gamma$, where $L$ represents the relaxed length of the FREE, $R$ represents the radius, and $\Gamma$ the fiber angle (Fig,~\ref{fig:overview}). 
+An ideal cylindrical FREE in its relaxed configuration (i.e. when gauge fluid pressure is zero and no external loads are applied) can be described by a set of three parameters, $L$, $R$, and $\Gamma$, where $L$ represents the relaxed length of the FREE, $R$ represents the radius, and $\Gamma$ the fiber angle (Fig.~\ref{fig:FREEparams}). 
 For notational convenience, we define two other quantities from these parameters:
 \begin{align}
 	B &= \left| \frac{L}{\cos{\Gamma}} \right| \\
@@ -82,7 +82,7 @@ For notational convenience, we define two other quantities from these parameters
 \end{align}
 where $B$ is the length of one of the FREE fibers, and $N$ is the total number of revolutions the fiber makes around the FREE in the relaxed configuration. 
 
-Under the assumption that a FREE remains a cylinder, its geometrical deformation can be fully defined by a change in its length $\Delta l$ and a twist about its main axis $\Delta \phi$.
+\revcomment{2.4}{The assumption that a FREE is cylindrical with inextensible fiber-reinforcements implies that changes in its radius, length, and twist are coupled via the right triangle relationship shown in Fig. \ref{fig:fiber}. Therefore, its geometrical deformation can be fully defined in terms of just two parameters, a change in its length $\Delta l$ and a twist about its main axis $\Delta \phi$.}
 These two values constitute the vector of generalized deformations $\vec{q} = \left[ \Delta l, \Delta \phi \right]^T$.
 Consequently the generalized torque vector $\vec{\tau} = \left[ F, M \right]^T$ describes a force along the main axis, $F$, and a torsional moment about that axis, $M$.
 
@@ -99,13 +99,14 @@ and we can express the volume as
 
 With this, the fluid Jacobian evaluates to:
 \begin{align}
-    J_q (\vec{q})
+    \bar{J}_q (\vec{q})
     &= \begin{bmatrix} 
 		        \frac{\pi \left( B^2 - 3(L + \Delta l)^2 \right)}{(2 \pi N + \Delta \phi)^2} & \frac{2 \pi (L+\Delta l) \left( (L+\Delta l)^2 - B^2 \right)}{(2 \pi N + \Delta \phi)^3}
 		\end{bmatrix}.    \label{eq:Jv}
 \end{align}
 
 
+% THIS FIGURE WILL BE REMOVED FOR SPACE IF NEEDED, BUT I WANT TO KEEP IT IF POSSIBLE 
 \begin{figure}
     \centering
     \begin{tikzpicture}
@@ -118,6 +119,9 @@ With this, the fluid Jacobian evaluates to:
     \caption{(a) A FREE contains many parallel fibers, all part of the same fiber family. (b) One isolated fiber forms a helical constraint. (c) The FREE radius $r$, twist $\Delta \phi$, and length change $\Delta l$ are geometrically related via the right triangle formed by unwinding a fiber and laying it flat.}
     \label{fig:fiber}
 \end{figure}
+
+
+
 
 
 

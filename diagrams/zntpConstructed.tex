@@ -7,7 +7,7 @@
 \def\scl{0.55} % define scale variable for plots
 
 % PRACTICE PLOT
-\matrix [row sep=0.5cm, column sep=0cm, style={align=center}] (my matrix) at (0,0)
+\matrix [row sep=0.25cm, column sep=0cm, style={align=center}] (my matrix) at (0,0)
 {
 
 \begin{axis}[
@@ -23,6 +23,7 @@
     xlabel style={anchor=north}, ylabel style={anchor=north},
     scale=\scl,
     anchor=center,
+    name=plot1,
     ]
     \def\pa{(-2,-3,2)}
     \def\pb{(2,-3,-2)}
@@ -66,6 +67,7 @@
     xlabel style={anchor=north}, ylabel style={anchor=north},
     scale=\scl,
     anchor=center,
+    name=plot2,
     ]
     \def\pa{(-2,-3,2)}
     \def\pb{(2,-3,-2)}
@@ -94,9 +96,6 @@
                     };
 \end{axis};
 
-\\
-
-\node (a) {(a)}; & \node (a) {(b)};
 
 \\
 
@@ -113,6 +112,7 @@
     xlabel style={anchor=north}, ylabel style={anchor=north},
     scale=\scl,
     anchor=center,
+    name=plot3,
     ]
     \def\pa{(-2,-3,2)}
     \def\pb{(2,-3,-2)}
@@ -156,6 +156,7 @@
     xlabel style={anchor=north}, ylabel style={anchor=north},
     scale=\scl,
     anchor=center,
+    name=plot4,
     ]
     \def\pa{(-2,-3,2)}
     \def\pb{(2,-3,-2)}
@@ -185,11 +186,13 @@
 \end{axis};
 
 \\
-
-\node (c) {(c)}; & \node (d) {(d)};
-
-\\
 };
+
+\node[above] (a2) at ($ (plot1.south west) !0.1! (plot1.south east) $) {(a)};
+\node[above] (b2) at ($ (plot2.south west) !0.1! (plot2.south east) $) {(b)};
+\node[above] (c2) at ($ (plot3.south west) !0.1! (plot3.south east) $) {(c)};
+\node[above] (d2) at ($ (plot4.south west) !0.1! (plot4.south east) $) {(d)};
+
 \end{tikzpicture}
 
     \caption{In this example, an end effector is driven by the parallel combination of two pairs of FREEs with opposing chirality.
