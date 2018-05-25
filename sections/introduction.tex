@@ -19,7 +19,7 @@ Examples of these actuators include bellows \cite{pridham1967bellows} McKibben a
 
 
 %% FREEs are great because they are fluid-driven and customizable
-A particularly promising type of soft fluid-driven actuator is the fiber-reinforced elasomeric enclosure (FREE) \cite{bishop2015design, krishnan2012evaluating, bishop2013force}, \revcomment{1.7}{also known as fiber-reinforced soft actuator (FRSA) \cite{galloway2013mechanically, connolly2015mechanical, connolly2017automatic}}.
+A particularly promising type of soft fluid-driven actuator is the fiber-reinforced elasomeric enclosure (FREE) \cite{bishop2015design, krishnan2012evaluating, bishop2013force}, \revcomment{1.7}{also known as the fiber-reinforced soft actuator (FRSA) \cite{galloway2013mechanically, connolly2015mechanical, connolly2017automatic}}.
 A FREE consists of a fluid-filled elastomeric tube wound with reinforcing fibers that pattern its stiffness to yield a desired mode and direction of deformation upon pressurization. %(Fig.~\ref{fig:FREEhand}). 
 By changing the angles and arrangement of these fibers, a FREE can be customized to yield a large variety of desired deformations and forces \cite{bishop2015design}. 
 \revcomment{1.2}{This customizability combined with their flexibility and tube-like shape makes these actuators well suited for applications such as a pipe inspection \cite{connolly2015mechanical}, catheter devices \cite{gilbertson2016soft}, or continuum manipulators \cite{grissom2006design}.}
@@ -33,7 +33,7 @@ Since the motion of such an actuator is inherently limited to one dimension, mul
 This is the prevalent design, for example, in industrial robotic arms.
 In contrast, in a soft actuator, the force generating element is not supported by any physical kinematic constraints.
 The actuator produces a spatial force without constraining the motion to happen exclusively in the direction of this force.
-Because of this, soft actuators are particularly well suited to be combined in \emph{parallel}, where the forces of the individual actuators are superimposed to generate a multi-dimensional spatial force (Figure~\ref{fig:overview}c).
+Because of this, soft actuators are particularly well suited to be combined in \emph{parallel}, where the forces of the individual actuators are superimposed to generate a multi-dimensional spatial force (Fig.~\ref{fig:overview}c).
 Such parallel combinations enable particularly compact designs of multi-DOF motion stages.
 % \Dan{EDIT THIS: They have equivalents in the world of traditional robotic systems, such as the well-known Stewart Platform.
 % However, in such systems, the complexity is much higher, as each individual actuator needs to be combined with five additional joints to overcome the inherent kinematic constraints.}
@@ -48,7 +48,8 @@ Such parallel combinations enable particularly compact designs of multi-DOF moti
 
 
 %% Adaptability of FREEs
-One of the benefits of using FREEs as actuators is their mechanical programmability, which makes them particularly well suited for parallel actuator combinations. 
+One of the benefits of using FREEs as actuators is their mechanical programmability.
+% , which makes them particularly well suited for parallel actuator combinations. 
 By changing the fiber angle, $\Gamma$, of a single set of evenly distributed parallel fibers (Fig.~\ref{fig:overview}), a FREE can be configured to produce a variety of combinations of forces along its main axis as well as twisting moments about this axis.
 The principle behind this adaptability can best be understood by considering a fiber being pulled in a plane (Fig.~\ref{fig:FMratios}a).
 For a given fiber force, $T$, the ratio between the $x$ and $y$ components of $T$ is determined by the angle $\Gamma$ (Fig.~\ref{fig:FMratios}b). 
@@ -57,16 +58,17 @@ Now the $x$-component of the force pulls along the direction of the central axis
 Additional effects, such as the changing radius of the FREE and the fluid pressure acting on its end-caps, make the process a bit more complicated \cite{bruder2017model}, but the ratio between the resulting axial force and twisting moment is fully determined by the fiber angle $\Gamma$ (Fig.~\ref{fig:FMratios}d).
 
 \revcomment{2.2, 2.9}{
-A number of researchers have developed ways of modeling fiber-reinforced actuators. Krishnan et. al. characterized the range of achievable motions based on fiber angles \cited{krishnan2012evaluating}, exploring beyond the scope of previous literature which had focused on McKibben actuators only \cite{tondu2012modelling}. Bishop-Moser et. al. formalized a geometry-based kinematic model of FREEs \cite{bishop2015design}, which was subsequently codified and expanded upon by others \cite{felt2018closed, krishnan2015kinematics}. Connolly et. al. took another approach, using finite element methods to predict the motions of fiber-reinforced actuators \cite{connolly2015mechanical}. Bishop-Moser \cite{bishop2013force}, Bruder \cite{bruder2017model}, and Sedal \cite{sedal2017constitutive}, introduced force prediction models based upon the principle of virtual work, force balance, and continuum mechanics, respectively. Furthermore, several papers have been written describing kinematic models of parallel combinations of fiber-reinforced actuators \cite{bishop2012parallel, bishop2012parallelsynth, pritts2004design}.
+A number of researchers have developed ways of modeling fiber-reinforced actuators. Krishnan et. al. characterized the range of achievable motions based on fiber angles \cite{krishnan2012evaluating}, exploring beyond the scope of previous literature which had focused on McKibben actuators only \cite{tondu2012modelling}. Bishop-Moser et. al. formalized a geometry-based kinematic model of FREEs \cite{bishop2015design}, which was subsequently codified and expanded upon by others \cite{felt2018closed, krishnan2015kinematics}. Connolly et. al. took another approach, using finite element methods to predict the motions of fiber-reinforced actuators \cite{connolly2015mechanical}. Bishop-Moser \cite{bishop2013force}, Bruder \cite{bruder2017model}, and Sedal \cite{sedal2017constitutive}, introduced force prediction models based upon the principle of virtual work, force balance, and continuum mechanics, respectively. Furthermore, several papers have been written describing kinematic models of parallel combinations of fiber-reinforced actuators \cite{bishop2012parallel, bishop2012parallelsynth, pritts2004design}.
 }
 
 This paper explores the potential of combining different types of FREE actuators in parallel to achieve fully controllable spatial forces, and provides the first generalized kinetic model of parallel combinations of FREEs (to the authors' knowledge).
 This work thus expands on the existing literature regarding fiber-reinforced fluid-driven actuators, which has focused mainly on the kinematics or kinetics of individual actuators, or the kinematics of parallel combinations of actuators.
-Here, we study which combinations and configurations of FREEs enable effective control of multi-DOF forces.
-To this end, we present a novel way to represent and calculate actuator forces in terms of a state dependent fluid-Jacobian.
-This concept readily extends from a single soft actuator to parallel combinations of actuators.
 \revcomment{1.5}{While series combinations of FREEs may also be of interest for some applications, that is not the focus of this work.}
-Our design and modeling methodology is employed and evaluated experimentally on a two degree of freedom test bench.
+Here, we investigate how parallel combinations of FREEs can be configured to enable effective control of multi-DOF forces.
+% Here, we study which parallel combinations and configurations of FREEs enable effective control of multi-DOF forces.
+To this end, we present a novel way to represent and calculate actuator forces in terms of a state dependent fluid-Jacobian.
+% This concept readily extends from a single soft actuator to parallel combinations of actuators.
+Our design and modeling methodology is then employed and evaluated experimentally on a two degree of freedom test platform.
 
 % This paper explores the potential of combining different types of FREE actuators in parallel to achieve fully controllable spatial forces.
 % This work thus expands on the existing literature regarding fiber-reinforced fluid-driven actuators, which has focused mainly on the kinematics  \cite{bishop2015design, connolly2015mechanical, felt2018closed, krishnan2015kinematics} or kinetics \cite{bishop2013force, bruder2017model, sedal2017constitutive} of individual actuators, \revcomment{1.5}{applications of series combinations of actuators \cite{gilbertson2016soft}}, or the kinematics of parallel combinations of actuators \cite{bishop2012parallel, bishop2012parallelsynth}, \revcomment{2.2}{\cite{pritts2004design}}.

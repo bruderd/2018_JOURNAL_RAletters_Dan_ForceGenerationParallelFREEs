@@ -25,7 +25,7 @@ In this work, we focus exclusively on the active general forces $\vec{\tau}$ tha
 The fluid Jacobian for such an actuator can be derived from the idea that the reinforcing fibers in a FREE create a kinematic constraint on the internal volume $V$ of the fluid cavity.
 Without the reinforcing fibers, this cavity could expand freely, since it is made from soft material.
 With the fibers, however, the volume is limited.
-This limitation on volume depends on the mechanical parameters of the FREE (e.g., the fiber angle or fiber length), but also on the current state of geometric deformation of the FREE.
+This limitation on volume depends on the mechanical parameters of the FREE (e.g., the relaxed fiber angle or fiber length) and on the current state of geometric deformation of the FREE.
 This geometric state can be represented by a generalized vector of spatial deformations $\vec{q}$:  $V = V\left(\vec{q}\right)$.
 
 
@@ -36,7 +36,7 @@ The derivative of this volume yields an expression $\dot{V}$ for the volumetric 
 where the fluid Jacobian is defined as $\bar{J}_{q}= \frac{\partial V}{\partial \vec{q}}$ with respect to the deformation $\vec{q}$. 
 
 
-It is important to note, that $\vec{\tau}$ and $\dot{\vec{q}}$ live in dual spaces. 
+It is important to note that $\vec{\tau}$ and $\dot{\vec{q}}$ live in dual spaces. 
 That is, forces in $\vec{\tau}$ correspond to linear motion in $\dot{\vec{q}}$, and moments in $\vec{\tau}$ correspond to angular motion in $\dot{\vec{q}}$.
 In the most general case, these are 6-dimensional vectors with three translations and three rotations.
 In this case, $\bar{J}_q$ is a $1 \times 6$ matrix.
@@ -58,8 +58,8 @@ Since the input pressure $p$ needs to be strictly positive to avoid collapsing o
 
 
 \subsection{The Fluid Jacobian of a Cylindrical FREE}
-The theoretical modeling approach outlined above can be applied independently of the exact geometry of a FREE and can even be extended to other classes of soft-actuators.
-However, to make the computation of the fluid Jacobian tractable, we rely on another common assumption for FREES: namely, that they maintain the geometry of an ideal cylinder \cite{bishop2015design}.
+The theoretical modeling approach outlined above can be applied independently of the exact geometry of a FREE and can even be extended to other classes of soft actuators.
+However, to make the computation of the fluid Jacobian tractable, we rely on another common assumption for FREES: that they maintain the geometry of an ideal cylinder \cite{bishop2015design}.
 This neglects the tapering of the actuator towards the end-caps and any potential bending along its main axis.
 
 \begin{figure}
@@ -82,7 +82,9 @@ For notational convenience, we define two other quantities from these parameters
 \end{align}
 where $B$ is the length of one of the FREE fibers, and $N$ is the total number of revolutions the fiber makes around the FREE in the relaxed configuration. 
 
-\revcomment{2.4}{The assumption that a FREE is cylindrical with inextensible fiber-reinforcements implies that changes in its radius, length, and twist are coupled via the right triangle relationship shown in Fig. \ref{fig:fiber}. Therefore, its geometrical deformation can be fully defined in terms of just two parameters, a change in its length $\Delta l$ and a twist about its main axis $\Delta \phi$.}
+\revcomment{2.4}{The assumption that a FREE is cylindrical with inextensible fiber-reinforcements implies that changes in its radius, length, and twist are coupled 
+% via the right triangle relationship shown in Fig. \ref{fig:fiber}
+. Therefore, its geometrical deformation can be fully defined in terms of just two parameters, a change in its length $\Delta l$ and a twist about its main axis $\Delta \phi$.}
 These two values constitute the vector of generalized deformations $\vec{q} = \left[ \Delta l, \Delta \phi \right]^T$.
 Consequently the generalized torque vector $\vec{\tau} = \left[ F, M \right]^T$ describes a force along the main axis, $F$, and a torsional moment about that axis, $M$.
 
@@ -106,75 +108,20 @@ With this, the fluid Jacobian evaluates to:
 \end{align}
 
 
-% THIS FIGURE WILL BE REMOVED FOR SPACE IF NEEDED, BUT I WANT TO KEEP IT IF POSSIBLE 
-\begin{figure}
-    \centering
-    \begin{tikzpicture}
-        \node (fiber) at (0,0)
-            {\includegraphics[width=0.85\linewidth]{figures/fiber_noLabels2.png}};
-        \node[below] (a) at ($ (fiber.south west) !0.08! (fiber.south east) $) {(a)};
-        \node[below] (b) at ($ (fiber.south west) !0.32! (fiber.south east) $) {(b)};
-        \node[below] (c) at ($ (fiber.south west) !0.75! (fiber.south east) $) {(c)};
-    \end{tikzpicture}
-    \caption{(a) A FREE contains many parallel fibers, all part of the same fiber family. (b) One isolated fiber forms a helical constraint. (c) The FREE radius $r$, twist $\Delta \phi$, and length change $\Delta l$ are geometrically related via the right triangle formed by unwinding a fiber and laying it flat.}
-    \label{fig:fiber}
-\end{figure}
+% % THIS FIGURE WILL BE REMOVED FOR SPACE IF NEEDED, BUT I WANT TO KEEP IT IF POSSIBLE 
+% \begin{figure}
+%     \centering
+%     \begin{tikzpicture}
+%         \node (fiber) at (0,0)
+%             {\includegraphics[width=0.85\linewidth]{figures/fiber_noLabels2.png}};
+%         \node[below] (a) at ($ (fiber.south west) !0.08! (fiber.south east) $) {(a)};
+%         \node[below] (b) at ($ (fiber.south west) !0.32! (fiber.south east) $) {(b)};
+%         \node[below] (c) at ($ (fiber.south west) !0.75! (fiber.south east) $) {(c)};
+%     \end{tikzpicture}
+%     \caption{(a) A FREE contains many parallel fibers, all part of the same fiber family. (b) One isolated fiber forms a helical constraint. (c) The FREE radius $r$, twist $\Delta \phi$, and length change $\Delta l$ are geometrically related via the right triangle formed by unwinding a fiber and laying it flat.}
+%     \label{fig:fiber}
+% \end{figure}
 
 
 
 
-
-
-
-%% UNUSED STUFF BELOW THIS LINE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%\begin{assumption}[Cylinder]
-%    A FREE is a cylinder with constant radius over its entire length.
-%\label{ass:cylinder}
-%\end{assumption}
-%
-%\begin{assumption}[Fiber Inextensibility]
-%    The length of each fiber in a FREE is constant.
-%    \label{ass:inextensibility}
-%\end{assumption}
-%
-%\begin{assumption}[Fiber Energy Storage]
-%    The fibers in a FREE do not store energy.
-%    \label{ass:EnergyStorage}
-%\end{assumption}
-
-\begin{comment}
-this energy transformation can be described in terms of a Jacobian that relates a FREEs state to its volume. 
-
-Since the FREE is assumed to be an ideal cylinder and the fibers inextensible, the fibers impose a helical constraint which determines the radius (see Figure \ref{fig:fiber}). Hence we can express the radius in terms of the relaxed parameters $B$, $N$ and the states $s$, $w$
-\begin{align}
-	r = \frac{B}{\abs{2 \pi N + w}} \sqrt{1 - \left( \frac{L+s}{B} \right)^2}
-\end{align}
-Now we can write the expression for volume as a function of the states
-\begin{align}
-	V(\vec{q}) &= \pi r^2 (L+s) \\
-	&= \frac{\pi (L+s) (B^2 - (L+s)^2)}{(2 \pi N + w)^2}
-\end{align}
-and define the Jacobian, $\bar{J}_V$, as the partial derivative of the volume with respect to the state
-\begin{equation}
-	\bar{J}_V(\vec{q}) = \frac{\partial V}{\partial \vec{q}}
-		      =
-		      \begin{bmatrix} 
-		        \frac{\pi \left( B^2 - 3(L + s)^2 \right)}{(2 \pi N + w)^2} & \frac{2 \pi (L+s) \left( (L+s)^2 - B^2 \right)}{(2 \pi N + w)^3}
-		      \end{bmatrix}
-\end{equation}
-yielding the following expression for volume change in terms of state change
-\begin{align}
-    \dot{V} &= \bar{J}_V (\vec{q}) \dot{\vec{q}}
-    \label{eq:Vdot}
-\end{align}
-Due to energy equivalence we can then write
-\begin{align}
-    \dot{\vec{q}}^T \vec{\Upsilon}^{\text{fiber}} &= \dot{V} P 
-    \label{eq:Eequiv}
-\end{align}
-where $\vec{\Upsilon}^\text{fiber} = \begin{bmatrix} F^\text{fiber} & M^\text{fiber} \end{bmatrix}^T$. Substituting (\ref{eq:Vdot}) into (\ref{eq:Eequiv}) we arrive at an expression for FREE forces due to the fibers as a function of internal fluid pressure
-\begin{align}
-    \vec{\Upsilon}^{\text{fiber}} (\vec{q}, P) &= \bar{J}_V^T (\vec{q}) P       \label{eq:fiberF}
-\end{align}
-\end{comment}

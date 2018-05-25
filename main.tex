@@ -17,6 +17,7 @@
 \usepackage{array}
 \usepackage{graphicx}
 \usepackage{booktabs}
+\usepackage{multirow}
 
 % Various math packages
 \usepackage{amsmath}								
@@ -36,6 +37,9 @@
 \pgfplotsset{compat=1.15}
 \usepgfplotslibrary{polar}
 \usepgfplotslibrary{patchplots}
+
+% % reduce white space after captions
+% \setlength{\textfloatsep}{10pt}
 
 %% downsample images to make file smaller
 %\usepackage{epstopdf}
@@ -112,7 +116,7 @@ Force Generation by Parallel Combinations of \\ Fiber-Reinforced Fluid-Driven Ac
 \thanks{The authors are with the Mechanical Engineering Department at the 
         University of Michigan, Ann Arbor, MI 48109, USA
         \{\tt\small bruderd, asedal, ramv, cdremy\}@umich.edu}%
-\thanks{This work has been submitted to the IEEE for possible publication. Copyright may be transferred without notice, after which this version may no longer be accessible.}
+% \thanks{This work has been submitted to the IEEE for possible publication. Copyright may be transferred without notice, after which this version may no longer be accessible.}
 }
 
 \begin{document}
@@ -130,7 +134,7 @@ Force Generation by Parallel Combinations of \\ Fiber-Reinforced Fluid-Driven Ac
 % \input{outline}
 
 % Input sections here
-\input{sections/introduction_v2.tex}
+\input{sections/introduction.tex}
 \input{sections/singleActuators.tex}
 \input{sections/parallelActuators.tex}
 \input{sections/experiment.tex}

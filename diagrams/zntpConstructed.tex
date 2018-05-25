@@ -1,10 +1,10 @@
 \begin{figure}
     \centering
 
-\includegraphics[width=\linewidth]{figures/zntpExampleRig3.png}
+\includegraphics[width=0.85\linewidth]{figures/zntpExampleRig3.png}
 
 \begin{tikzpicture}
-\def\scl{0.55} % define scale variable for plots
+\def\scl{0.45} % define scale variable for plots
 
 % PRACTICE PLOT
 \matrix [row sep=0.25cm, column sep=0cm, style={align=center}] (my matrix) at (0,0)
@@ -195,10 +195,10 @@
 
 \end{tikzpicture}
 
-    \caption{In this example, an end effector is driven by the parallel combination of two pairs of FREEs with opposing chirality.
+    \caption{An end effector is driven by the parallel combination of two pairs of FREEs with opposing chirality.
     The zonotope (grey areas) is the range of forces that can be produced by applying strictly positive pressure to the individual FREEs.
     It is spanned by the individual force vectors that each FREE produces at maximal pressure (plotted here in the color corresponding to the FREE's appearance in the diagram above).
-    By constructing the zonotope for (a) one FREE, (b) two FREEs in parallel, (c) three FREEs in parallel, (d) four FREEs in parallel, one can observe that all four actuators are needed to gain full control authority over forces along and torques about the $z$-axis.
-    It is notable, that in this poorly designed system (with fiber angles and attachments points as shown in the top diagram), the theoretical minimum of 3 actuators is not sufficient to achieve full control authority.}
+    By constructing the zonotope for (a) one FREE, (b) two FREEs, (c) three FREEs, (d) four FREEs in parallel, one can observe that all four actuators are needed to gain full control authority over forces along and torques about the $z$-axis.
+    In this poorly designed system (with fiber angles and attachments points as shown in the top diagram), the theoretical minimum of 3 actuators is not sufficient to achieve full control authority.}
     \label{fig:zntpConstructed}
 \end{figure}

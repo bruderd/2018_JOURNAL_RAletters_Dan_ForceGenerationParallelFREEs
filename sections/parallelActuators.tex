@@ -1,10 +1,7 @@
 \subsection{Parallel Combinations of FREEs}
 \label{sec:parallelActuators}
 We can extend the concept of a fluid Jacobian to systems with multiple actuators that are mounted in parallel.
-This includes systems such as the continuum manipulator or Stewart Platform that are shown in Fig.~\ref{fig:overview}.
-
-
-FREEs that are mounted in parallel, have one end attached to a common ground and the other rigidly attached to an end effector.
+FREEs that are mounted in parallel each have one end attached to a common ground and the other rigidly attached to an end effector.
 The position and orientation of this end effector is given by a deformation vector $\vec{x}$, and we assume that an inverse kinematics function allows the computation of the state $\vec{q}_i \left(\vec{x}\right)$ for each individual FREE.
 To express forces and torques in a common reference frame, we define a body-fixed reference point and coordinate system that are attached to the end effector (Fig.~\ref{fig:dp_defined}). 
 Expressed in these coordinates, a position vector ${\vec{d}_i = \begin{bmatrix} d_i^{\hat{x}_e} & d_i^{\hat{y}_e} & d_i^{\hat{z}_e} \end{bmatrix}^T}$ defines the point where the $i$th FREE is attached, and a unit vector ${\hat{a}_i = \begin{bmatrix} a_i^{\hat{x}_e} & a_i^{\hat{y}_e} & a_i^{\hat{z}_e} \end{bmatrix}^T}$, expresses the direction of the associated FREE axis.
@@ -48,7 +45,7 @@ where $\mathcal{D}_{i}$ is the $6 \times 2$ matrix:
         \node[below] (b) at ($ (diagram.south west) !0.65! (diagram.south east) $) {(b)};
     \end{tikzpicture}
 %    (a) An arbitrary combination of 3 FREEs connected to a common end effector. (b) A zoomed in view of the end effector with its local coordinate frame shown.}
-    \caption{\revcomment{2.7}{(a) When multiple FREEs are attached in parallel to the same end effector, shown on the left, we need to take into account their relative position and orientation. (b) This is determined by the vector $\vec{d}_i$ of the displacement of the attachment point of a FREE relative to the origin of the end effector frame and by the unit vector $\hat{a}_i$ that is aligned with the FREE axis at the attachment point, shown in the zoomed in view on the right.}}
+    \caption{\revcomment{2.7}{(a) When multiple FREEs are attached in parallel to the same end effector, shown on the left, we must consider their relative positions and orientations. (b) This is determined by the vector $\vec{d}_i$ of the displacement of the attachment point of a FREE relative to the origin of the end effector frame, and by the unit vector $\hat{a}_i$ that is aligned with the FREE axis at the attachment point, shown in the zoomed-in view on the right.}}
     \label{fig:dp_defined}
 \end{figure}
 
@@ -70,10 +67,12 @@ with the overall fluid Jacobian $\bar{J}_x$:
 \end{align}
 
 \subsection{The Force Zonotope}
-Equation \eqref{DAVIDreallyLIKESthisEQUATION} shows that the force capability of the parallel combination of multiple FREEs is a linear function of the pressure values in the individual actuators.
+Equation \eqref{DAVIDreallyLIKESthisEQUATION} shows that the force capability of the parallel combination of multiple FREEs is a linear function of the pressures in the individual actuators.
 Since the fluid Jacobian $\bar{J}_{x}$ depends on the end effector state $\vec{x}$, the ability of such a system to generate forces at the end effector will vary based on its deformation.
 For some values of $\vec{x}$ it may be possible to generate spacial forces in multiple directions, while for others the span of possible forces may by narrower. 
-The \emph{force zonotope} of a parallel combination of FREEs, similar to the force ellipsoid of rigid manipulators \cite{spong2008robot}, describes the set of forces that can be generated at the end effector with a bounded set of input pressures.
+The \emph{force zonotope} of a parallel combination of FREEs, similar to the force ellipsoid of rigid manipulators, 
+% \cite{spong2008robot}
+describes the set of forces that can be generated at the end effector with a bounded set of input pressures.
 
 \begin{definition}[Force Zonotope]
     For a parallel combination of $n$ FREEs, the force zonotope is the set of active general 
@@ -97,7 +96,7 @@ Since the motion of the end-effector is two-dimensional, we would like to achiev
 When constructing the zonotope one FREE at time (Figure~\ref{fig:zntpConstructed}a-d), one can observe how all four FREEs are needed to achieve this control authority.
 In particular, it becomes evident that to achieve full control in $n$ dimensions, at least $n+1$ individual FREEs are required in an antagonistic configuration.
 The additional FREE is needed since these soft actuators cannot be driven with negative pressure and can hence not produce bidirectional forces.
-One can also observe, that if the FREEs are chosen or arranged poorly such that the directions in $\bar{J}_{x}$ do not cover the space of desired forces (such as in Fig.~\ref{fig:zntpConstructed}c), this minimum number of actuators might not be sufficient.
+One can also observe that if the FREEs are chosen or arranged poorly such that the directions in $\bar{J}_{x}$ do not cover the space of desired forces (such as in Fig.~\ref{fig:zntpConstructed}c), this minimum number of actuators might not be sufficient.
 
 \input{diagrams/zntpConstructed.tex}
 
