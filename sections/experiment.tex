@@ -90,7 +90,7 @@ At each of these configurations, the forces were measured at all pressure combin
     \mathcal{P} &= \left\{ \bmx \alpha_1 & \alpha_2 & \alpha_3 \emx^T p^{\text{max}} \, : \, \alpha_i = \left\{ 0, \frac{1}{4}, \frac{1}{2}, \frac{3}{4}, 1 \right\} \right\}
 \end{align}
 with $p^{\text{max}}$ = \unit[103.4]{kPa}. 
-\revcomment{3.2}{The experiment was performed twice using two different sets of FREEs to observe how fabrication variability might effect performance. The results from Trial 1 are displayed in Fig.~\ref{fig:results} and the error for both trials is given in Table \ref{table:RMSE}.}
+\revcomment{3.2}{The experiment was performed twice using two different sets of FREEs to observe how fabrication variability might affect performance. The results from Trial 1 are displayed in Fig.~\ref{fig:results} and the error for both trials is given in Table \ref{table:RMSE}.}
 
 
 
@@ -111,7 +111,7 @@ and evaluated the error across all $N = 125$ trials of a given end effector conf
 %     \text{RMSE} &= \sqrt{ \frac{\sum_{j=1}^{N} e_j^2}{N} } \\
 %     \text{Max Error} &= \max \{ \left| e_j \right| : j = 1, ... , N \}
 % \end{align}
-As shown in Table \ref{table:RMSE}, the root-mean-square error (RMSE) is less than \unit[1.2]{N} (\unit[${8 \times 10^{-3}}$]{Nm}), and the maximum error is less than \unit[3]{N}  (\unit[${19 \times 10^{-3}}$]{Nm}) across all trials and configurations.
+As shown in Table \ref{table:RMSE}, the root-mean-square error (RMSE) is less than \unit[1.5]{N} (\unit[${8 \times 10^{-3}}$]{Nm}), and the maximum error is less than \unit[3]{N}  (\unit[${19 \times 10^{-3}}$]{Nm}) across all trials and configurations.
 
 \begin{table}[H]
 \centering
@@ -154,7 +154,7 @@ The buckling might explain the noticeable leftward offset of many of the points 
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{figures/zntp_vs_x4.pdf}
-    \caption{A visualization of how the \emph{force zonotope} of the parallel combination of three FREEs (see Fig.~\ref{fig:rig}) changes as a function of the end effector state $x$. One can observe that the change in the zonotope ultimately limits the work-space of such a system.  In particular the zonotope will collapse for compressions of more than \unit[-10]{mm}.  For \revcomment{2.5}{scale and comparison, the convex hulls of the measured points from Fig.~\ref{fig:results}} are superimposed upon their corresponding zonotope at the configurations that were evaluated experimentally.}
+    \caption{A visualization of how the \emph{force zonotope} of the parallel combination of three FREEs (see Fig.~\ref{fig:rig}) changes as a function of the end effector state $x$. One can observe that the change in the zonotope ultimately limits the work-space of such a system.  In particular the zonotope will collapse for compressions of more than \unit[-10]{mm}.  For \revcomment{2.5}{scale and comparison, the convex hulls of the measured points from Fig.~\ref{fig:results}} are superimposed over their corresponding zonotope at the configurations that were evaluated experimentally.}
     % \marginnote{\#2.5}
     \label{fig:zntp_vs_x}
 \end{figure}
