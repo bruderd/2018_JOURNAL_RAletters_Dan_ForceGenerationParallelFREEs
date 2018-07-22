@@ -1,10 +1,13 @@
 % \pdfoutput=1    % apparently this is needed at the beginning for arXiv to process it
-\documentclass[letterpaper, 10 pt, conference]{ieeeconf}
+
+% \documentclass[letterpaper, 10 pt, conference]{ieeeconf}
+\documentclass[letterpaper, 10 pt, journal, twoside]{IEEEtran}
+
 
 \IEEEoverridecommandlockouts                              % This command is only needed if 
                                                           % you want to use the \thanks command
 
-\overrideIEEEmargins                                      % Needed to meet printer requirements.
+% \overrideIEEEmargins                                      % Needed to meet printer requirements. Comment this for final RAL version, but keep it for final conference version.
 
 % numbers option provides compact numerical references in the text. 
 % \usepackage[numbers]{natbib}
@@ -101,7 +104,7 @@
 % \makeatother
 
 % Set macro for labeling edits
-% \newcommand{\revcomment}[2]{\textcolor{red}{#2} \marginnote{\##1}} % Include reference commands
+\newcommand{\revcomment}[2]{\textcolor{red}{#2} \marginnote{\##1}} % Include reference commands
 \renewcommand{\revcomment}[2]{#2}   % removes coloring of edited sections, i.e. makes doc look normal (comment this line out for highlighted edits)
 
 
@@ -110,26 +113,38 @@ Force Generation by Parallel Combinations of \\ Fiber-Reinforced Fluid-Driven Ac
 }
 
 
-\author{Daniel Bruder, %<-this % stops a space
-        Audrey Sedal, %
-        Ram Vasudevan, %
-        and C. David Remy, \emph{Member, IEEE} %
-\thanks{*This material is supported by the Toyota Research Institute, and is based upon work supported by the National Science Foundation Graduate Research Fellowship Program under Grant No. 1256260 DGE. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.}% <-this % stops a space
-\thanks{The authors are with the Mechanical Engineering Department at the 
+\author{Daniel Bruder$^{1}$, %<-this % stops a space
+        Audrey Sedal$^{1}$, %
+        Ram Vasudevan$^{1}$, %
+        and C. David Remy$^{1}$%
+\thanks{Manuscript received: February, 25, 2018; Revised May, 29, 2018; Accepted July, 9, 2018.}    % use only for final RAL version
+\thanks{This paper was recommended for publication by Editor Yu Sun upon evaluation of the Associate Editor and Reviewers' comments.
+*This material is supported by the Toyota Research Institute, and is based upon work supported by the National Science Foundation Graduate Research Fellowship Program under Grant No. 1256260 DGE. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.}% <-this % stops a space
+\thanks{$^{1}$ The authors are with the Mechanical Engineering Department at the 
         University of Michigan, Ann Arbor, MI 48109, USA
         \{\tt\small bruderd, asedal, ramv, cdremy\}@umich.edu}%
-% \thanks{This work has been submitted to the IEEE for possible publication. Copyright may be transferred without notice, after which this version may no longer be accessible.}
+\thanks{Digital Object Identifier (DOI): see top of this page.}
+% \thanks{This work has been submitted to the IEEE for possible publication. Copyright may be transferred without notice, after which this version may no longer be accessible.}   % for archive version only
 }
 
 \begin{document}
 
 \maketitle
-\thispagestyle{empty}
-\pagestyle{empty}
+% \thispagestyle{empty}         % commented for final RAL version
+% \pagestyle{empty}             % commented for final RAL version
+
+% Paper headers (for final RAL submission)
+\markboth{IEEE Robotics and Automation Letters. Preprint Version. Accepted July, 2018}
+{Bruder \MakeLowercase{\textit{et al.}}: Force Generation by Parallel Combinations of Fluid-Driven Actuators}  % Use only for final RAL version
 
 \begin{abstract}
 \input{sections/abstract}
 \end{abstract}
+
+% Keywords appear just beneath the abstract. Use only for final RAL version.
+\begin{IEEEkeywords}
+Soft Material Robotics, Hydraulic/Pneumatic Actuators, Force Control
+\end{IEEEkeywords}
 
 \IEEEpeerreviewmaketitle
 
